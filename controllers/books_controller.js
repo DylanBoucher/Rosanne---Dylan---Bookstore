@@ -24,7 +24,17 @@ router.get('/new', (req, res) => {
 
 //Show route
 router.get('/:id', async (req, res, next) => {
-    res.send('This is the show page')
+    try{
+        const foundBook = await db.Product.findById(req.params.id)
+        const context = {
+            oneBook: foundBook,
+        }
+        return res.render('show.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //Edit route
