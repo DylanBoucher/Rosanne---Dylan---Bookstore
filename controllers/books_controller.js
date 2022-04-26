@@ -64,7 +64,14 @@ router.post('/', async (req, res, next) => {
 
 //Delete route
 router.delete('/:id', async (req, res, next) => {
-    res.send('This is working')
+    try{
+        const deletedBook = await db.Product.findByIdAndDelete(req.params.id)
+        return res.redirect('/products')
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //Update route

@@ -27,5 +27,8 @@
         <li name="pages"><%= oneBook.pages %></li>
     </ul>
     <a href="/products/<%= oneBook._id %>/edit">Edit Book Info</a>
+    <form action="/products/<%= oneBook._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Book">
+    </form>
 </body>
 </html>
