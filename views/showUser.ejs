@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head.ejs', { pageName: "User Profile" }) %>
-
-    <body>
-
-        <div>
-            <%- include('partials/head.ejs') %>
-        </div>
-        <div>
-            <h1><a href="">
-                    <%= oneUser.userName %>
-                </a></h1>
-            <img src="<%= oneUser.image %> " alt="<%= oneUser.userName %>">
-        </div>
-        <div>
-            <ul>
-                <li></li>
-            </ul>
-        </div>
-    </body>
-
+<body>
+    <div> <%- include('partials/head.ejs') %> </div>
+    <h1>Username</h1>
+    <p>image</p>
+    <ul>
+        <li>books sold</li>
+        <li>location</li>
+    </ul>
+    <ul>
+        <label>Reveiws</label>
+        <li>reviews in list here</li>
+    </ul>
+    
+</body>
 </html>
