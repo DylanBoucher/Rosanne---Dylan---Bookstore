@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/products', controllers.products)
 
 //Home route
-// app.get('/', (req, res) => res.send('Home page'))
+app.get('/', (req, res) => res.send('Home page'))
 
 //Listen
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

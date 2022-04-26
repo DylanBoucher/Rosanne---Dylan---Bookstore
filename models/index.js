@@ -1,3 +1,3 @@
 module.exports = {
-    Product: require('./Books')
+    Product: require('./Books.js')
 }

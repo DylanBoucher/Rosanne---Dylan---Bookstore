@@ -6,12 +6,20 @@ const db = require('../models')
 
 //Index route
 router.get('/', async (req, res, next) => {
-    res.send('This is working')
+    try {
+        const books = await db.Product.find({})
+        const context = { books }
+        return res.render('index.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //New route
 router.get('/new', (req, res) => {
-    res.send('New page')
+    res.render('new.ejs')
 })
 
 //Show route
