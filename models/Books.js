@@ -21,6 +21,10 @@ const bookSchema = new mongoose.Schema({
     publisher: {
         type: String,
     },
+    publishDate: {
+        type: String,
+        required: [true, "Please enter date of publication."]
+    },
     pages: {
         type: Number,
         min: [0, "Cannot have less than 0 pages."]
