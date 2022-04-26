@@ -22,7 +22,7 @@ const bookSchema = new mongoose.Schema({
         type: String,
     },
     pages: {
-        type: String,
+        type: Number,
         min: [0, "Cannot have less than 0 pages."]
     },
     summary: {

@@ -34,7 +34,14 @@ router.get('/:id/edit', async (req, res, next) => {
 
 //Create route
 router.post('/', async (req, res, next) => {
-    res.send('This is working')
+    try{
+        const createdBook = await db.Product.create(req.body)
+        return res.redirect('/products')
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //Delete route

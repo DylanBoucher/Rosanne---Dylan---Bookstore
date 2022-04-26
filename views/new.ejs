@@ -7,8 +7,36 @@
     <title>New Book</title>
 </head>
 <body>
-    <form action="" method="POST">
-        
+    <form action="/products" method="POST">
+        <div>
+            <label for="title">Book Title:</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div>
+            <label for="price"> Book Price: </label>
+            <input id="price" name="price" type="number" />
+        </div>
+        <div>
+            <label for="image"> Book Image(url): </label>
+            <input id="image" name="image" type="text" />
+        </div>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author">
+        </div>
+        <div>
+            <label for="publisher">Publisher</label>
+            <input type="text" name="publisher" id="publisher">
+        </div>
+        <div>
+            <label for="pages">Page Number:</label>
+            <input type="number" name="pages" id="pages">
+        </div>
+        <div>
+            <label for="summary">Summary:</label>
+            <textarea name="summary" id="summary" placeholder="Insert summary here."></textarea>
+        </div>
+        <input type="submit" value="Add Book">
     </form>
 </body>
 </html>
