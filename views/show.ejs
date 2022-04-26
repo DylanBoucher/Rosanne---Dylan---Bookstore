@@ -7,10 +7,14 @@
     <title><%= oneBook.title %></title>
 </head>
 <body>
-    <h1><%= oneBook.title %></h1>
     <img src="<%= oneBook.image %> " alt="<%= oneBook.title %>">
+    <h3><%= oneBook.title %></h3>
     <p>By: <%= oneBook.author %> </p>
     <p>$<%= oneBook.price %> </p>
+    <p><%= oneBook.condition %> Condition</p>
+    <p><%= oneBook.location %></p>
+    <p><%= oneBook.genre %></p>
+    <p><%= oneBook.seller %></p>
     <h2>Overview</h2>
     <div>
         <p><%= oneBook.summary %></p>
@@ -26,6 +30,8 @@
         <label for="pages">Pages:</label>
         <li name="pages"><%= oneBook.pages %></li>
     </ul>
+    <h2>Reviews</h2>
+    
     <a href="/products/<%= oneBook._id %>/edit">Edit Book Info</a>
     <form action="/products/<%= oneBook._id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete Book">

@@ -7,13 +7,17 @@
     <title>Bookstore</title>
 </head>
 <body>
+    <%- include('partials/nav.ejs') %> 
     <div>
+        <p>--------Placeholder for search bar----------</p>
         <% for(let i = 0; i < books.length; i++) {%>
             <% const book = books[i] %>
             <div>
-                <h2><a href="products/<%= book._id %>"><%= book.title %></a></h2>
-                <img src="<%= book.image%>" alt="<%= book.title %>">
-                <p><%= book.author%></p>
+                <a href="products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
+                <div>
+                    <p><%= book.title %></p>
+                    <p>$ <%= book.price %></p>
+                </div>
             </div>
             <%}%>
     </div>
