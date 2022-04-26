@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const bookSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: [true, "Username cannot be empty"],
@@ -18,9 +18,9 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: [true, "Author cannot be empty."],
     },
-    review: {
-        type: String,
-    }
+    // review: {
+    //     type: String,
+    // }
 }, {timestamps: true})
 
 const User = mongoose.model('User', userSchema)
