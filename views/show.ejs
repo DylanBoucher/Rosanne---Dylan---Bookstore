@@ -22,9 +22,10 @@
 
         <label for="publishDate">Publication Date:</label>
         <li name="publishDate"><%= oneBook.publishDate %></li>
-        
+
         <label for="pages">Pages:</label>
         <li name="pages"><%= oneBook.pages %></li>
     </ul>
+    <a href="/products/<%= oneBook._id %>/edit">Edit Book Info</a>
 </body>
 </html>
