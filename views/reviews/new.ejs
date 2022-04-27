@@ -16,14 +16,14 @@
             </label><br/>
             <label>
                 Related Book:
-                <select name="product">
+                <select name="book">
                     <option value="Select"> &ltSelect Book&gt</option>
-                    <% for(let i = 0; i < books.length; i++) {%>
-                        <option value="<%= books[i]._id%>"><%= books[i].name %></option>
-                   <% }%>
+                   <% books.forEach(element => {%>
+                       <option value="<%= element._id%>"><%= element.title %></option>
+                   <%})%>
                 </select>
             </label><br/>
-            <input type="submit" value="create review">
+            <input type="submit" value="Post Review">
         </form>
         <form>
             <input type="button" value="Return" onclick="history.back()">

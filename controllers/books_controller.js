@@ -27,6 +27,7 @@ router.get('/new', (req, res) => {
 router.get('/:id', async (req, res, next) => {
     try{
         const foundBook = await db.Product.findById(req.params.id)
+        const review = await db.Review.findById(req.params.id)
         const context = {
             oneBook: foundBook,
         }

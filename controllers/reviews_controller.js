@@ -30,9 +30,11 @@ router.get('/new', async (req, res, next) => {
 })
 
 //Post route
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     try {
-
+        const newReviewData = req.body
+        const newReview = await db.Review.create(newReviewData)
+        res.redirect(`/products/${newReview.book}`)
     }catch (error) {
         console.log(error)
         req.error = error
