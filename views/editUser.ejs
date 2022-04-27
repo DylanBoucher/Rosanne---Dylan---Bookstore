@@ -7,7 +7,7 @@
     <form action="/products" method="POST">
         <div>
             <label for="username">Update UserName:</label>
-            <input type="text" name="title" id="title" value="<%=oneUser.userName%>">
+            <input type="text" name="title" id="title" value="<%=oneUser.username%>">
         </div>
         <div>
             <label for="email">Update Email Address: </label>
@@ -19,7 +19,7 @@
         </div>
         <div>
             <label for="image">Update User Image (url): </label>
-            <input id="image" name="image" type="text" value="<%=oneUser.image%>"/>
+            <input id="image" name="image" type="text" value="<%=oneUser.avatar%>"/>
         </div>
         <div>
             <label for="booksSold">Update Books Sold:</label>
@@ -31,23 +31,5 @@
         </div>
         <input type="submit" value="Add User">
     </form>
-</body>
-</html>
-
-
-
-
-    <div> <%- include('partials/head.ejs') %> </div>
-    <h1>Username</h1>
-    <p>image</p>
-    <ul>
-        <li>books sold</li>
-        <li>location</li>
-    </ul>
-    <ul>
-        <label>Reveiws</label>
-        <li>reviews in list here</li>
-    </ul>
-    
 </body>
 </html>

@@ -5,7 +5,7 @@ const router = express.Router()
 const db = require('../models')
 
 //Show route
-router.get('/userName', async (req, res, next) => {
+router.get('/user/:id', async (req, res, next) => {
     try{
         const user = await db.User.findById(req.params.id)
         const context = {
