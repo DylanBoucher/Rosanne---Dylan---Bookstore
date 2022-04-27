@@ -1,0 +1,15 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+
+    <% if ( typeof pageName !== 'undefined' ){%>
+        <!-- we need to check if a varaible is defined in EJS before we can use it. -->
+        <title> R & D Books | <%= pageName %></title>
+    <% } else {%>
+        <title>R & D Books</title>
+    <% } %>
+
+</head>
