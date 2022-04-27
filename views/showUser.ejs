@@ -3,16 +3,18 @@
 <%- include('partials/head.ejs', { pageName: "User Profile" }) %>
 <body>
     <div> <%- include('partials/head.ejs') %> </div>
-    <h1>Username</h1>
-    <p>image</p>
+    <h1><%=oneUser.name%></h1>
+    <div>
+        <img class="userImage" src="<%= oneUser.image %>" alt="<%= oneUser.userName %>"/>
+    </div>
     <ul>
-        <li>books sold</li>
-        <li>location</li>
+        <li> <%= oneUser.booksSold%></li>
+        <li><%= oneUser.location%></li>
     </ul>
     <ul>
-        <label>Reveiws</label>
+        <!-- Waiting on review creation -->
+        <label>Reviews</label>
         <li>reviews in list here</li>
-    </ul>
-    
+    </ul>    
 </body>
 </html>

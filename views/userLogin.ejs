@@ -5,19 +5,18 @@
 <body>
     <div> <%- include('partials/head.ejs') %> </div>
     <h1>Please enter your login information</h1>
-
     <div>
-        <label>Username:</label>
+        <label>Username or email:</label>
         <input type="text" name="username"/>
     </div>
     <div>
         <label>Password:</label>
         <input type="text" name="password"/>
     </div>
-
     <div>
         <button>Submit</button>
-        <button>Home</button>
+        <!-- MAKE AN AUTH CHECK HERE -->
+        <button href = "/">Home</button>
     </div>
 </body>
 
