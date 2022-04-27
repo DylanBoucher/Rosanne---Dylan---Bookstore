@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs', { pageName: "User Login" }) %>
+
+<body>
+    <div> <%- include('partials/head.ejs') %> </div>
+    <h1>Please enter your login information</h1>
+    <div>
+        <label>Username or email:</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="text" name="password"/>
+    </div>
+    <div>
+        <button>Submit</button>
+        <!-- MAKE AN AUTH CHECK HERE -->
+        <button href = "/">Home</button>
+    </div>
+</body>
+
+</html>
