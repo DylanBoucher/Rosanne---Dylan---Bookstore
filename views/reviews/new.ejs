@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <h1>New Product Review</h1>
+        <form action="/reviews" method="POST">
+            <label>
+                Rating:
+                <input type="number" name="rating">
+            </label><br/>
+            <label>
+                Review:
+                <input type="string" name="content">
+            </label><br/>
+            <label>
+                Related Book:
+                <select name="product">
+                    <option value="Select"> &ltSelect Book&gt</option>
+                    <% for(let i = 0; i < books.length; i++) {%>
+                        <option value="<%= books[i]._id%>"><%= books[i].name %></option>
+                   <% }%>
+                </select>
+            </label><br/>
+            <input type="submit" value="create review">
+        </form>
+        <form>
+            <input type="button" value="Return" onclick="history.back()">
+        </form>
+    </body>
+</html>
