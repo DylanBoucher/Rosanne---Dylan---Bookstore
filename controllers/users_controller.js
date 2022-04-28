@@ -38,8 +38,10 @@ router.get('/:username/edit', async (req, res, next) => {
 
 //Create route
 router.post('/', async (req, res, next) => {
+    console.log('made it')
     try{
         const createdUser= await db.User.create(req.body)
+        console.log(` created ${createdUser}`)
         return res.redirect('/')
     }catch (error) {
         console.log(error)
