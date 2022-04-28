@@ -33,6 +33,21 @@ const bookSchema = new mongoose.Schema({
         type: String,
         // Commented out for convenience right now: required: [true, "Must have a summary."],
     },
+    condition: {
+        type: String,
+        default: "Perfect"
+    },
+    seller: {
+        type: String,
+        required: [true, "Please enter seller name."]
+    },
+    genre: {
+        type: String,
+        required: [true, "Please enter a genre"]
+    },
+    location: {
+        type: String,
+    },
 }, {timestamps: true})
 
 const Product = mongoose.model('Product', bookSchema)
