@@ -43,7 +43,7 @@ router.post('/', async (req, res, next) => {
 })
 
 //Show route
-router.get('/reviewId', async (req, res, next) => {
+router.get('/:reviewId', async (req, res, next) => {
     try {
         const foundReview = await db.Review.findById(req.params.reviewId).populate('product');
         const context = {review: foundReview}
@@ -56,9 +56,10 @@ router.get('/reviewId', async (req, res, next) => {
 })
 
 //Update route
-router.put('/reviewId', async (req, res, next) => {
+router.put('/:reviewId', async (req, res, next) => {
     try {
-
+        const updatedReview = await db.Review.findByIdAndUpdate(req.params.reviewId, req.body)
+        return res.redirect(`/products/`+updatedReview.book)
     }catch (error) {
         console.log(error)
         req.error = error
@@ -68,14 +69,23 @@ router.put('/reviewId', async (req, res, next) => {
 
 //Edit route
 router.get('/:reviewId/edit', async (req, res, next) => {
-   res.send("hitting review edit")
+    try {
+        const updatedReview = await db.Review.findById(req.params.reviewId);
+        const context = {
+            review: updatedReview,
+        };
+        res.render('reviews/edit.ejs', context);
+    }catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 })
 
 //Delete route
 router.delete('/:reviewId', async (req, res, next) => {
     try{
         const deleteReview = await db.Review.findByIdAndDelete(req.params.reviewId);
-        console.log(req.params.reviewId)
         res.redirect('/products/'+deleteReview.book);
      }catch(error){
          console.log(error);
