@@ -23,7 +23,8 @@ app.use(express.urlencoded({ extended: false }))
 
 //Controllers
 app.use('/products', controllers.products)
-app.use('/user', controllers.products)
+app.use('/user', controllers.users)
+app.use('/reviews', controllers.reviews)
 
 //Home route
 app.get('/', (req, res) => res.send('Home page'))
