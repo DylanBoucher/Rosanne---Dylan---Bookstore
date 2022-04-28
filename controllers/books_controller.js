@@ -39,7 +39,15 @@ router.get('/:id', async (req, res, next) => {
 
 //Edit route
 router.get('/:id/edit', async (req, res, next) => {
-    res.send('Edit page')
+    try{
+        const updatedBook = await db.Product.findById(req.params.id)
+        const context = {book: updatedBook}
+        return res.render('edit.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //Create route
@@ -56,12 +64,26 @@ router.post('/', async (req, res, next) => {
 
 //Delete route
 router.delete('/:id', async (req, res, next) => {
-    res.send('This is working')
+    try{
+        const deletedBook = await db.Product.findByIdAndDelete(req.params.id)
+        return res.redirect('/products')
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //Update route
 router.put('/:id', async (req, res, next) => {
-    res.send('This is working')
+    try{
+        const updatedBook = await db.Product.findByIdAndUpdate(req.params.id, req.body)
+        return res.redirect(`/products`)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
 })
 
 //Exporting router
