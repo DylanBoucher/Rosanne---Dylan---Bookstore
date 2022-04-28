@@ -30,6 +30,7 @@ Responsibilities:
         Show page and controller
         Index page and controller
         New.ejs and controller
+        Reviews: all pages and controller
         API research
     Both: 
         Auth research/Learning

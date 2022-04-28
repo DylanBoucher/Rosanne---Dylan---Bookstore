@@ -9,9 +9,11 @@ router.get('/new', (req, res) => {
     res.render('user/newUser.ejs')
 })
 //Show route - user
-router.get('/:username', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try{
         const user = await db.User.findById(req.params.id)
+        console.log(req.params.id)
+        console.log(user)
         const context = {
             users: user,
         }
@@ -38,11 +40,12 @@ router.get('/:username/edit', async (req, res, next) => {
 
 //Create route
 router.post('/', async (req, res, next) => {
-    console.log('made it')
+    //console.log('made it')
     try{
         const createdUser= await db.User.create(req.body)
-        console.log(` created ${createdUser}`)
+        //console.log(` created ${createdUser}`)
         return res.redirect('/')
+        console.log(req.body)
     }catch (error) {
         console.log(error)
         req.error = error
