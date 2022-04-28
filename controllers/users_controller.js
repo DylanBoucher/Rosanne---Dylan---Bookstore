@@ -6,7 +6,7 @@ const db = require('../models')
 
 //New route - user
 router.get('/new', (req, res) => {
-    res.render('newUser.ejs')
+    res.render('user/newUser.ejs')
 })
 //Show route - user
 router.get('/:username', async (req, res, next) => {
@@ -15,7 +15,7 @@ router.get('/:username', async (req, res, next) => {
         const context = {
             users: user,
         }
-        return res.render('showUser.ejs', context)
+        return res.render('user/showUser.ejs', context)
     }catch (error) {
         console.log(error)
         req.error = error
@@ -24,11 +24,11 @@ router.get('/:username', async (req, res, next) => {
 })
 
 //Edit route
-router.get('/:id/edit', async (req, res, next) => {
+router.get('/:username/edit', async (req, res, next) => {
     try{
         const updatedUser = await db.User.findById(req.params.id)
         const context = {user: updatedUser}
-        return res.render('editUser.ejs', context)
+        return res.render('user/editUser.ejs', context)
     }catch (error) {
         console.log(error)
         req.error = error
@@ -40,7 +40,7 @@ router.get('/:id/edit', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try{
         const createdUser= await db.User.create(req.body)
-        return res.redirect('/home')
+        return res.redirect('/')
     }catch (error) {
         console.log(error)
         req.error = error
@@ -64,7 +64,7 @@ router.delete('/:username', async (req, res, next) => {
 router.put('/:username', async (req, res, next) => {
     try{
         const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body)
-        return res.redirect(`/showUser`)
+        return res.redirect(`user/showUser`)
     }catch (error) {
         console.log(error)
         req.error = error
