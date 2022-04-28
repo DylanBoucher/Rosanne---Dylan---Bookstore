@@ -65,7 +65,8 @@ User Stories:
 
     All users will start at the main page where they can see the index, access show pages, and user logins.
 
-User Flow:
+User Flow:![Screen Shot 2022-04-26 at 1 51 36 PM](https://user-images.githubusercontent.com/6979738/165663835-5e137c46-6e66-4921-ae27-ba1955e4200c.png)
+
 
 
 DB Models and ERD: Current plan is to use reference for users and reviews, but may change later in process (embed books)?
