@@ -43,9 +43,11 @@ router.post('/', async (req, res, next) => {
 })
 
 //Show route
-router.get('/', async (req, res, next) => {
+router.get('/reviewId', async (req, res, next) => {
     try {
-
+        const foundReview = await db.Review.findById(req.params.reviewId).populate('product');
+        const context = {review: foundReview}
+        res.render('reviews/show.ejs', context);
     }catch (error) {
         console.log(error)
         req.error = error
@@ -54,7 +56,7 @@ router.get('/', async (req, res, next) => {
 })
 
 //Update route
-router.get('/', async (req, res, next) => {
+router.put('/reviewId', async (req, res, next) => {
     try {
 
     }catch (error) {
@@ -65,19 +67,21 @@ router.get('/', async (req, res, next) => {
 })
 
 //Edit route
-router.get('/', async (req, res, next) => {
+router.get('/:reviewId/edit', async (req, res, next) => {
    res.send("hitting review edit")
 })
 
 //Delete route
-router.get('/', async (req, res, next) => {
-    try {
-
-    }catch (error) {
-        console.log(error)
-        req.error = error
-        return next()
-    }
-})
+router.delete('/:reviewId', async (req, res, next) => {
+    try{
+        const deleteReview = await db.Review.findByIdAndDelete(req.params.reviewId);
+        console.log(req.params.reviewId)
+        res.redirect('/products/'+deleteReview.book);
+     }catch(error){
+         console.log(error);
+         req.error = error;
+         return next();
+     }
+});
 
 module.exports = router

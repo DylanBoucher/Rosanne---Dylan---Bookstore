@@ -31,6 +31,15 @@
         <li name="pages"><%= oneBook.pages %></li>
     </ul>
     <h2>Reviews</h2>
+    <% for(let i = 0; i < review.length; i++ ){%>
+        <ul>
+            <h3><%= review[i].rating%> Stars</h3>
+            <p><%=review[i].content%></p>
+        </ul>
+        <form action="/reviews/<%=review[i]._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Review">
+        </form>
+        <%}%>
     
     <a href="/products/<%= oneBook._id %>/edit">Edit Book Info</a>
     <form action="/products/<%= oneBook._id %>?_method=DELETE" method="POST">

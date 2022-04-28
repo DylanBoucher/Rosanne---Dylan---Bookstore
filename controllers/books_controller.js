@@ -27,9 +27,10 @@ router.get('/new', (req, res) => {
 router.get('/:id', async (req, res, next) => {
     try{
         const foundBook = await db.Product.findById(req.params.id)
-        const review = await db.Review.findById(req.params.id)
+        const review = await db.Review.find({product: req.params.id})
         const context = {
             oneBook: foundBook,
+            review: review,
         }
         return res.render('show.ejs', context)
     }catch (error) {
@@ -68,6 +69,7 @@ router.post('/', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
     try{
         const deletedBook = await db.Product.findByIdAndDelete(req.params.id)
+        const deletedReviews = await db.Review.deleteMany({product: req.params.id})
         return res.redirect('/products')
     }catch (error) {
         console.log(error)
