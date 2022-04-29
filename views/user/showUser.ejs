@@ -23,10 +23,26 @@
     </ul>
 
     <div>
-        <a href="/user/<%= users.id %>/edit">Edit Book Info</a>
+        <button><a href="/user/<%= users.id %>/edit">Edit User Info</a></button>
         <form action="/user/<%= users.id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Book">
+        <input type="submit" value="Delete User">
     </div>
 </body>
-
 </html>
+
+
+
+condition: {
+    type: String,
+    default: "Perfect"
+},
+seller: {
+    type: String,
+    required: [true, "Please enter seller name."]
+},
+genre: {
+    type: String,
+    required: [true, "Please enter a genre"]
+},
+location: {
+    type: String,

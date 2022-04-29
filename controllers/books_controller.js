@@ -56,6 +56,8 @@ router.get('/:id/edit', async (req, res, next) => {
 //Create route
 router.post('/', async (req, res, next) => {
     try{
+        const createBookSeller = await db.User.find({username: req.body.seller})
+        req.body.seller = createBookSeller[0]._id
         const createdBook = await db.Product.create(req.body)
         return res.redirect('/products')
     }catch (error) {
