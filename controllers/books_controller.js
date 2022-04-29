@@ -1,6 +1,5 @@
 const express = require('express')
 
-
 const router = express.Router()
 
 const db = require('../models')
@@ -8,7 +7,11 @@ const db = require('../models')
 //Index route
 router.get('/', async (req, res, next) => {
     try {
-        const books = await db.Product.find({})
+        const title = req.query.title
+        let books = await db.Product.find({})
+        if(title) {
+            books = await db.Product.find({title: title})
+        }
         const context = { books }
         return res.render('index.ejs', context)
     }catch (error) {

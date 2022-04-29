@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', { pageName: "New User Profile" }) %>
+
+<body>
+    <div> <%- include('../partials/head.ejs') %> </div>
+    <form action="/user/<%= user._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="username">Update UserName:</label>
+            <input type="text" name="username" id="username" value="<%=user.username%>">
+        </div>
+        <div>
+            <label for="email">Update Email Address: </label>
+            <input id="email" name="email" type="text" value="<%=user.email%>"/>
+        </div>
+        <div>
+            <label for="password">Change Password:</label>
+            <input type="text" name="password" id="author" value="<%=user.password%>">
+        </div>
+        <div>
+            <label for="image">Update User Image (url): </label>
+            <input id="image" name="image" type="text" value="<%=user.avatar%>"/>
+        </div>
+        <div>
+            <label for="booksSold">Update Books Sold:</label>
+            <input type="number" name="booksSold" id="booksSold" value="<%=user.booksSold%>">
+        </div>
+        <div>
+            <label for="location">Update Location (city, state):</label>
+            <input type="text" name="location" id="location" value="<%=user.location%>">
+        </div>
+        <input type="submit" value="Update User">
+    </form>
+</body>
+</html>

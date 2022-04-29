@@ -13,8 +13,10 @@
             <div>
                 <a href="products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
                 <div>
-                    <p data-book-title><%= book.title %></p>
-                    <p>$ <%= book.price %></p>
+                    <ul>
+                        <li data-book-title><%= book.title %></li>
+                        <li>$ <%= book.price %></li>
+                    </ul>
                 </div>
             </div>
             <%}%>

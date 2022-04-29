@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head.ejs', { pageName: "New User Profile" }) %>
+<%- include('../partials/head.ejs', { pageName: "New User Profile" }) %>
 
 <body>
-    <div> <%- include('partials/head.ejs') %> </div>
-    <form action="/products" method="POST">
+   <div> <%- include('../partials/nav.ejs') %> </div>
+    <form action="/user" method="POST">
         <div>
-            <label for="username">Book Title:</label>
-            <input type="text" name="title" id="title">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
         </div>
         <div>
             <label for="email"> Email Address: </label>
@@ -19,7 +19,7 @@
         </div>
         <div>
             <label for="image"> User Image(url): </label>
-            <input id="image" name="image" type="text" />
+            <input type="text" id="avatar" name="avatar" />
         </div>
         <div>
             <label for="booksSold">Books Sold:</label>

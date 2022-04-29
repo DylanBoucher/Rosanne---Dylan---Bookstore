@@ -4,14 +4,74 @@ const router = express.Router()
 
 const db = require('../models')
 
-//Show route
-router.get('/user/:id', async (req, res, next) => {
+//New route - user
+router.get('/new', (req, res) => {
+    res.render('user/newUser.ejs')
+})
+//Show route - user
+router.get('/:id', async (req, res, next) => {
     try{
         const user = await db.User.findById(req.params.id)
+        console.log(req.params.id)
+        console.log(user)
         const context = {
             users: user,
         }
-        return res.render('showUser.ejs', context)
+        return res.render('user/showUser.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+
+//Edit route
+router.get('/:id/edit', async (req, res, next) => {
+    try{
+        const updatedUser = await db.User.findById(req.params.id)
+        // console.log(req.params.id)
+        const context = {user: updatedUser}
+        return res.render('user/editUser.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+
+//Create route
+router.post('/', async (req, res, next) => {
+    //console.log('made it')
+    try{
+        const createdUser= await db.User.create(req.body)
+        //console.log(` created ${createdUser}`)
+        return res.redirect('/')
+        console.log(req.body)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+
+//Delete route
+router.delete('/:id', async (req, res, next) => {
+    try{
+        const deletedUser = await db.User.findByIdAndDelete(req.params.id)
+        return res.redirect('/')
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+
+//Update route
+router.put('/:id', async (req, res, next) => {
+    try{
+        const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body)
+        console.log(req.params.id)
+        return res.redirect(`/`)
     }catch (error) {
         console.log(error)
         req.error = error
