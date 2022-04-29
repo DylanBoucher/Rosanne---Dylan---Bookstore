@@ -23,7 +23,7 @@ Responsibilities:
         Edit User
         User Login
         User Profile
-        Add review
+        Heroku app setup
     Dylan:
         file outline set up
         Server.js, db setup, 
