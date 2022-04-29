@@ -26,9 +26,10 @@ router.get('/:id', async (req, res, next) => {
 })
 
 //Edit route
-router.get('/:username/edit', async (req, res, next) => {
+router.get('/:id/edit', async (req, res, next) => {
     try{
         const updatedUser = await db.User.findById(req.params.id)
+        // console.log(req.params.id)
         const context = {user: updatedUser}
         return res.render('user/editUser.ejs', context)
     }catch (error) {
@@ -54,7 +55,7 @@ router.post('/', async (req, res, next) => {
 })
 
 //Delete route
-router.delete('/:username', async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
     try{
         const deletedUser = await db.User.findByIdAndDelete(req.params.id)
         return res.redirect('/')
@@ -66,10 +67,11 @@ router.delete('/:username', async (req, res, next) => {
 })
 
 //Update route
-router.put('/:username', async (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
     try{
         const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body)
-        return res.redirect(`user/showUser`)
+        console.log(req.params.id)
+        return res.redirect(`/`)
     }catch (error) {
         console.log(error)
         req.error = error
