@@ -21,10 +21,11 @@ const bookSchema = new mongoose.Schema({
     publisher: {
         type: String,
     },
-    publishDate: {
-        type: String,
-        required: [true, "Please enter date of publication."]
-    },
+    //NOT IN THE NEW
+    // publishDate: {
+    //     type: String,
+    //     required: [true, "Please enter date of publication."]
+    // },
     pages: {
         type: Number,
         min: [0, "Cannot have less than 0 pages."]
@@ -32,6 +33,12 @@ const bookSchema = new mongoose.Schema({
     summary: {
         type: String,
         // Commented out for convenience right now: required: [true, "Must have a summary."],
+    },
+    seller: {
+        //tells it to look at Mongoose
+        type: mongoose.Types.ObjectId,
+        //tells which object it should look for
+        ref: 'User'
     },
 }, {timestamps: true})
 
