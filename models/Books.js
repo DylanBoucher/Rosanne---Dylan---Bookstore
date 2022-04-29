@@ -39,7 +39,6 @@ const bookSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         //tells which object it should look for
         ref: 'User'
-
     },
 }, {timestamps: true})
 
