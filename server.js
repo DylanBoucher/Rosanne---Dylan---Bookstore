@@ -27,7 +27,7 @@ app.use('/user', controllers.users)
 app.use('/reviews', controllers.reviews)
 
 //Home route
-app.get('/', (req, res) => res.send('Home page'))
+app.get('/', (req, res) => res.render('home.ejs'))
 
 //Listen
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
