@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookstore</title>
-</head>
+   <%- include('partials/head.ejs') %> 
 <body>
-    <%- include('partials/nav.ejs') %> 
-    <div>
-        <form action="/search" method="POST">
-            <input id="search" type="text" name="book" value="" placeholder="Book Title or Author">
-            <input type="submit">
-        </form>
+    <%- include('partials/nav.ejs') %>
+    <div class="search-wrapper">
+        <label for="search">Search:</label>
+        <input type="search" id="search" placeholder="Book Title or Author" data-search>
+    </div>
+    <div class="books" data-books>
         <% for(let i = 0; i < books.length; i++) {%>
             <% const book = books[i] %>
             <div>
                 <a href="products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
                 <div>
-                    <p><%= book.title %></p>
+                    <p data-book-title><%= book.title %></p>
                     <p>$ <%= book.price %></p>
                 </div>
             </div>
