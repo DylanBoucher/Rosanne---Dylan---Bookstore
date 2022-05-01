@@ -6,6 +6,18 @@
     <%- include('./partials/nav.ejs') %>
     <h1>Welcome to R&D Books!</h1>
     <p>We are here to help people buy and sell used books!  Leave reviews to help people know what books to buy, and what sellers are your favorites!</p>
+<div>
+    <% for(let i = 0; i < books.length; i++) {%>
+        <% const book = books[i] %>
+        <div>
+            <div>
+                <p><%= book.title %></p>
+            </div>
+            <a href="products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
+        </div>
+        <%}%>
+    </div>
+
 
 </body>
 </html>

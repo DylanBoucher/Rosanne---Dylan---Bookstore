@@ -31,18 +31,22 @@ app.use('/user', controllers.users)
 app.use('/reviews', controllers.reviews)
 
 //Home route
-app.get('/', (req, res) => res.render('home.ejs'))
-// router.get('/', async (req, res, next) => {
-//     try {
-//         const books = await db.Product.find({})
-//         const context = { books }
-//         return res.render('./home.ejs', context)
-//     }catch (error) {
-//         console.log(error)
-//         req.error = error
-//         return next()
-//     }
-// })
+//app.get('/', (req, res) => res.render('home.ejs'))
+app.get('/', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('home.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+
+module.exports = router
 
 //Listen
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

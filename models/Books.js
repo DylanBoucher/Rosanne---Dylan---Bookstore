@@ -1,31 +1,36 @@
 const mongoose = require('mongoose')
 
 const bookSchema = new mongoose.Schema({
+    image: {
+        type: String,
+        required: [true, "Must have image."],
+    },
     title: {
         type: String,
         required: [true, "Title cannot be empty."],
+    },
+    author: {
+        type: String,
+        required: [true, "Author cannot be empty."],
     },
     price: {
         type: Number,
         min: [0, 'You cannot have a negative price.'],
         required: [true, "Price cannot be empty."]
     },
-    image: {
-        type: String,
-        required: [true, "Must have image."],
-    },
-    author: {
-        type: String,
-        required: [true, "Author cannot be empty."],
-    },
-    publisher: {
+    genre: {
         type: String,
     },
-    //NOT IN THE NEW
-    // publishDate: {
-    //     type: String,
-    //     required: [true, "Please enter date of publication."]
-    // },
+    condition: {
+        type: String,
+    },
+    location: {
+        type: String,
+    },
+    publishDate: {
+        type: String,
+        required: [true, "Please enter date of publication."]
+    },
     pages: {
         type: Number,
         min: [0, "Cannot have less than 0 pages."]

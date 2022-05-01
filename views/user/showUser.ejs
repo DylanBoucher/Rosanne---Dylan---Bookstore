@@ -26,6 +26,9 @@
         <button><a href="/user/<%= users.id %>/edit">Edit User Info</a></button>
         <form action="/user/<%= users.id %>?_method=DELETE" method="POST">
         <input type="submit" value="Delete User">
+        <form>
+            <input type="button" value="Return" onclick="history.back()">
+        </form>
     </div>
 </body>
 </html>
