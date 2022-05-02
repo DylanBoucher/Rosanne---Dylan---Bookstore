@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
         const title = req.query.title
         let books = await db.Product.find({})
         if(title) {
-            books = await db.Product.find({title: title})
+            books = await db.Product.find({title: title})  
         }
         const context = { books }
         return res.render('index.ejs', context)
