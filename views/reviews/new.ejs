@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<%- include('../partials/head.ejs', {pageName: 'New Review'}) %>
+<%- include('../partials/head.ejs', { pageName: "New User Profile" }) %>
 <html lang="en">
     <body>
+        <div class = 'header'>
+            <%- include('../partials/nav.ejs') %>
+        </div>
         <h1>New Product Review</h1>
         <form action="/reviews" method="POST">
             <label>

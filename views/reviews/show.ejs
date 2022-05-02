@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+<%- include('../partials/head.ejs', { pageName: "Review Show Page" }) %>
 <html lang="en">
-    <%- include('../partials/head.ejs', {pageName: 'Reviews'}) %>
 <body>
+    <div class = 'header'>
+        <%- include('../partials/nav.ejs') %>
+    </div>
     <h1>Review Show Page</h1>
     <p>Product: <%= review.product.name %></p>
     <a href="/products/<%= review.product._id %>">Find more information about <%= review.product.name %></a>

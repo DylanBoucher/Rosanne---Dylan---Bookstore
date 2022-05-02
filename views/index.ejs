@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-   <%- include('partials/head.ejs') %> 
+
+<head>
+    <%- include('./partials/head.ejs', { pageName: "Bookstore" }) %>
+</head>
 <body>
-    <%- include('partials/nav.ejs') %>
-    
-    
-    <form id="search-form" method="POST" action="/products/search"  >
+    <div class = 'header'>
+        <%- include('./partials/nav.ejs') %>
+    </div>
+        <form id="search-form" method="POST" action="/products/search"  >
         <label for="search">Search:</label>
         <input name="search" type="search" id="search" placeholder="Book Title or Author">
         <input id="submit" type="submit" value="Search">
     </form>
-
-    
     <div>
         <% for(let i = 0; i < books.length; i++) {%>
             <% const book = books[i] %>

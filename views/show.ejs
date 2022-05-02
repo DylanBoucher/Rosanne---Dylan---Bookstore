@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <%- include('./partials/head.ejs', { pageName: "oneBook..title" }) %>
-</head>
 <body>
+    <div class = 'header'>
+        <%- include('./partials/nav.ejs') %>
+    </div>
     <div>
         <img src="<%= oneBook.image %> " alt="<%= oneBook.title %>">
     </div>
