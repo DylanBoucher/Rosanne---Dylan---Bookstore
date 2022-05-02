@@ -20,6 +20,9 @@ li{
     flex-direction: row;
     background-color: #012b3b;
 }
+.homeImg {
+    height: 400px;
+}
 .navbar {
     list-style-type: none;
     color: #ead7c6;

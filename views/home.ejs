@@ -3,12 +3,15 @@
 <head>    <%- include('./partials/head.ejs', { pageName: "User Profile" }) %>
 </head>
 <body>
-    <div class = header>
+    <div class = 'header'>
         <%- include('./partials/nav.ejs') %>
     </div>
+    <div ><img class = 'homeImg' src = "https://i.imgur.com/4le1od5.png" alt = "Good books deserve to be reread"></div>
     <div>
-        <h1>Welcome to R&D Books!</h1>
-        <p>We are here to help people buy and sell used books!  Leave reviews to help people know what books to buy, and what sellers are your favorites!</p>
+        <h2>Welcome to R&D Used Books!</h2>
+        <h3>We have a passion for helping people buy and sell used books.  Come in and browse our shelves!
+        </h3>
+       <h3>Leave reviews to help people know what books to buy, and which sellers are your favorites.</h3>
     </div>
 <div>
     <% for(let i = 0; i < books.length; i++) {%>
