@@ -29,7 +29,7 @@ const bookSchema = new mongoose.Schema({
     },
     publishDate: {
         type: String,
-        required: [true, "Please enter date of publication."]
+        // required: [true, "Please enter date of publication."]
     },
     pages: {
         type: Number,
