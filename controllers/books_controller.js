@@ -21,8 +21,13 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+//New route
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
+
 //Search route
-router.post('/?', async (req, res, next) => {
+router.post('/search', async (req, res, next) => {
     try{
         const title= req.body.search
         return res.redirect('/products/?title='+ title)
@@ -32,12 +37,6 @@ router.post('/?', async (req, res, next) => {
         return next()
     }
 })
-
-//New route
-router.get('/new', (req, res) => {
-    res.render('new.ejs')
-})
-
 // router.get('/api', async (req, res, next) => {
 //     const books = await db.Product.find({})
 //     res.send(books)
