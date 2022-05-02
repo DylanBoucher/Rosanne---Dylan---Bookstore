@@ -30,10 +30,7 @@ router.get('/new', (req, res) => {
 router.post('/search', async (req, res, next) => {
     try{
         const title= req.body.search
-        function capitalize(title) {
-            return title.charAt(0).toUpperCase() + title.slice(1)
-        }
-        const input = title.split(' ').map(capitalize).join(' ')
+        const input =title.charAt(0).toUpperCase() + title.slice(1)
         return res.redirect('/products/?title='+ input)
     }catch (error) {
         console.log(error)
