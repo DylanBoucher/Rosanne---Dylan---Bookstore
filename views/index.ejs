@@ -3,33 +3,15 @@
    <%- include('partials/head.ejs') %> 
 <body>
     <%- include('partials/nav.ejs') %>
-    <!-- <script>
-        let searchBar = document.querySelector('#search')
-        searchBar.addEventListener('input', (e) => {
-            console.log(e.key)
-        })
-        console.log(input)
-        function setAction(form) {
-            form.action = '/products/?title='+input
-        }
-    </script> -->
     
-    <form onsubmit="setAction(this)">
+    
+    <form id="search-form" method="POST" action="/products/?"  >
         <label for="search">Search:</label>
-        <input type="search" id="search" placeholder="Book Title or Author">
-        <input type="submit" value="Search">
+        <input name="search" type="search" id="search" placeholder="Book Title or Author">
+        <input id="submit" type="submit" value="Search">
     </form>
-    <script>
-        let search = document.querySelector('#search')
-        let input = search.value
-        search.addEventListener('keyup', (e) => {
-            let input = e.key
-            function setAction(form) {
-            form.action = '/products/?title='+input
-        }
-        })
-        
-    </script>
+
+    
     <div>
         <% for(let i = 0; i < books.length; i++) {%>
             <% const book = books[i] %>

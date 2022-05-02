@@ -71,7 +71,7 @@ router.put('/:id', async (req, res, next) => {
     try{
         const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body)
         console.log(req.params.id)
-        return res.redirect(`/`)
+        return res.redirect(`/user/${req.params.id}`)
     }catch (error) {
         console.log(error)
         req.error = error

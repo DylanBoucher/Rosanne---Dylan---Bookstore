@@ -21,9 +21,27 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+//Search route
+router.post('/?', async (req, res, next) => {
+    try{
+        const title= req.body.search
+        
+        return res.redirect('/products/?title='+ title)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+
 //New route
 router.get('/new', (req, res) => {
     res.render('new.ejs')
+})
+
+router.get('/api', async (req, res, next) => {
+    const books = await db.Product.find({})
+    res.send(books)
 })
 
 //Show route
@@ -59,6 +77,8 @@ router.get('/:id/edit', async (req, res, next) => {
 //Create route
 router.post('/', async (req, res, next) => {
     try{
+        const createBookSeller = await db.User.find({username: req.body.seller})
+        req.body.seller = createBookSeller[0]._id
         const createdBook = await db.Product.create(req.body)
         return res.redirect('/products')
     }catch (error) {

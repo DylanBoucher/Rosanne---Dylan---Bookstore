@@ -1,29 +1,35 @@
 const mongoose = require('mongoose')
 
 const bookSchema = new mongoose.Schema({
+    image: {
+        type: String,
+        required: [true, "Must have image."],
+    },
     title: {
         type: String,
         required: [true, "Title cannot be empty."],
+    },
+    author: {
+        type: String,
+        required: [true, "Author cannot be empty."],
     },
     price: {
         type: Number,
         min: [0, 'You cannot have a negative price.'],
         required: [true, "Price cannot be empty."]
     },
-    image: {
+    genre: {
         type: String,
-        required: [true, "Must have image."],
     },
-    author: {
+    condition: {
         type: String,
-        required: [true, "Author cannot be empty."],
     },
-    publisher: {
+    location: {
         type: String,
     },
     publishDate: {
         type: String,
-        required: [true, "Please enter date of publication."]
+        // required: [true, "Please enter date of publication."]
     },
     pages: {
         type: Number,
@@ -33,20 +39,11 @@ const bookSchema = new mongoose.Schema({
         type: String,
         // Commented out for convenience right now: required: [true, "Must have a summary."],
     },
-    condition: {
-        type: String,
-        default: "Perfect"
-    },
     seller: {
-        type: String,
-        required: [true, "Please enter seller name."]
-    },
-    genre: {
-        type: String,
-        required: [true, "Please enter a genre"]
-    },
-    location: {
-        type: String,
+        //tells it to look at Mongoose
+        type: mongoose.Types.ObjectId,
+        //tells which object it should look for
+        ref: 'User'
     },
 }, {timestamps: true})
 
