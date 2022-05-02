@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/products', controllers.products)
 app.use('/user', controllers.users)
 app.use('/reviews', controllers.reviews)
+app.use('/search', controllers.search)
 
 //Home route
 //app.get('/', (req, res) => res.render('home.ejs'))
