@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head.ejs', { pageName: "Bookstore" }) %>
 </head>
+
 <body>
-    <div class = 'header'>
+    <div class='header'>
         <%- include('./partials/nav.ejs') %>
     </div>
     <div>
@@ -12,16 +14,23 @@
             <input id="search" type="text" name="book" value="" placeholder="Book Title or Author">
             <input type="submit">
         </form>
-        <% for(let i = 0; i < books.length; i++) {%>
-            <% const book = books[i] %>
-            <div>
-                <a href="products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
+    </div>
+    <div>
+        <% for(let i=0; i < books.length; i++) {%>
+            <% const book=books[i] %>
                 <div>
-                    <p><%= book.title %></p>
-                    <p>$ <%= book.price %></p>
+                    <a href="products/<%= book._id %>"><img class="bookcover" src="<%= book.image%>" alt="<%= book.title %>"></a>
                 </div>
-            </div>
+                <div class=bookTandP>
+                    <p class = bookUnder>
+                        <%= book.title %>
+                    </p>
+                    <p class = bookUnder>$ <%= book.price %>
+                    </p>
+                </div>
+                <div class="spacer"></div>
             <%}%>
     </div>
 </body>
+
 </html>
