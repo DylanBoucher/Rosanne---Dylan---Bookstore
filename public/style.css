@@ -1,19 +1,46 @@
-body{
+body {
     background-color: #ead7c6;
     font-family: 'EB Garamond', serif;
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
 }
-h1{
+
+h1 {
     font-family: 'Special Elite', cursive;
 }
-ul{
-    list-style-type: none;
-    
+h4 {
+    font-family: 'Special Elite', cursive;
+    font-size: large;
 }
-li{
+ul {
+    list-style-type: none;
+}
+
+li {
     float: left;
     display: inline;
     text-align: center;
     padding: 10px;
+}
+.about{
+    color: white;
+    background-color: #596f7c;
+    padding: 10px;
+}
+.bookcover{
+    height: 300px;
+}
+.bookTandP{
+    display: inline-flex;
+}
+.bookUnder{
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
+    padding: 10px;
+}
+.content {
+    text-align: left;
 }
 .header {
     align-items: center;
@@ -21,38 +48,39 @@ li{
     background-color: #012b3b;
 }
 .homeImg {
-    height: 400px;
+    width: 100%;
 }
 .navbar {
     list-style-type: none;
     color: #ead7c6;
     font-size: 20px;
-}   
-.navdiv{
+}
+.navdiv {
     display: flex;
     padding: 5px;
     align-items: center;
 }
+.spacer{
+    padding: 20px;
+}
 a:link {
     color: #a5a29d;
     text-decoration: none;
-  }
-  
-  /* visited link */
-  a:visited {
+}
+/* visited link */
+a:visited {
     color: #a5a29d;
     text-decoration: none;
-  }
-  
-  /* mouse over link */
-  a:hover {
+}
+/* mouse over link */
+a:hover {
     text-decoration: none;
     color: #012b3b;
-    background-color: #a5a29d;;
-  }
-  
-  /* selected link */
-  a:active {
+    background-color: #a5a29d;
+    ;
+}
+/* selected link */
+a:active {
     text-decoration: none;
     color: #596f7c;
-  }
+}
