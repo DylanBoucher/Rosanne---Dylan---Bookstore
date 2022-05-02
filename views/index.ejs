@@ -16,7 +16,7 @@
         <% for(let i = 0; i < books.length; i++) {%>
             <% const book = books[i] %>
             <div>
-                <a href="products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
+                <a href="/products/<%= book._id %>"><img src="<%= book.image%>" alt="<%= book.title %>"></a>
                 <div>
                         <h3><%= book.title %></h3>
                         <p>$ <%= book.price %></p>
