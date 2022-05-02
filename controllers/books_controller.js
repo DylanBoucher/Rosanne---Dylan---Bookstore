@@ -25,7 +25,6 @@ router.get('/', async (req, res, next) => {
 router.post('/?', async (req, res, next) => {
     try{
         const title= req.body.search
-        
         return res.redirect('/products/?title='+ title)
     }catch (error) {
         console.log(error)
@@ -39,10 +38,10 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
-router.get('/api', async (req, res, next) => {
-    const books = await db.Product.find({})
-    res.send(books)
-})
+// router.get('/api', async (req, res, next) => {
+//     const books = await db.Product.find({})
+//     res.send(books)
+// })
 
 //Show route
 router.get('/:id', async (req, res, next) => {
