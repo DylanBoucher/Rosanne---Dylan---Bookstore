@@ -3,7 +3,9 @@
 <%- include('../partials/head.ejs', { pageName: "New User Profile" }) %>
 
 <body>
-    <div> <%- include('../partials/head.ejs', { pageName: "Edit User"}) %> </div>
+    <div class = 'header'>
+        <%- include('../partials/nav.ejs') %>
+    </div>
     <form action="/user/<%= user._id %>?_method=PUT" method="POST">
         <div>
             <label for="username">Update UserName:</label>

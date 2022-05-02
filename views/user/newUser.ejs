@@ -3,7 +3,9 @@
 <%- include('../partials/head.ejs', { pageName: "New User Profile" }) %>
 
 <body>
-   <div> <%- include('../partials/nav.ejs') %> </div>
+    <div class = 'header'>
+        <%- include('../partials/nav.ejs') %>
+    </div>
     <form action="/user" method="POST">
         <div>
             <label for="username">Username:</label>
