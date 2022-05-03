@@ -8,13 +8,13 @@
             <%- include('../partials/nav.ejs') %>
         </div>
         <div>
-            <h1>
+            <h1 class = "username">
                 <%= users.username %>
             </h1>
             <image src='<%= users.avatar %>' alt='<%= users.username %>' />
         </div>
         <div>
-            <ul class=aboutUser>
+            <ul class="aboutUser">
                 <li>Books Sold: <%= users.booksSold %>
                 </li>
                 <li>Location: <%= users.location %>
@@ -22,6 +22,8 @@
             </ul>
         </div>
         <div>
+            
+            <button><a href="/products/new">Sell a New Book</a></button>
             <button><a href="/user/<%= users.id %>/edit">Edit User Info</a></button>
             <form action="/user/<%= users.id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete User">

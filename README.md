@@ -84,4 +84,3 @@ Features to add at a later date:
     Book requests by users (for books they want to buy)
     Add cart (difficult)
     Add checkout (difficult)
-

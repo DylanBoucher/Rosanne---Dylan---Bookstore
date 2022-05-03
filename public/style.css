@@ -128,6 +128,10 @@ button {
     padding: 20px;
 }
 
+.username{
+    text-align: center;
+}
+
 a:link {
     color: #ead7c6;
     text-decoration: none;
