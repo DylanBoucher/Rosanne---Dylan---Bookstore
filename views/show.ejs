@@ -21,8 +21,11 @@
         <p><%= oneBook.summary %></p>
     </div>
     <div>
-        <p>Location: <%= oneBook.location %></p>
-
+        <a href=../user/<%=user._id %>> <img class="avatar"
+            src="<%= user.avatar %>"
+            alt="User Avatar"></a>
+        <p>Seller: <%= user.username %></p>
+        <p>Location: <%= user.location %></p>
     </div>
     <h2>Reviews</h2>
     <% for(let i = 0; i < review.length; i++ ){%>

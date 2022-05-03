@@ -1,13 +1,13 @@
 body {
     background-color: #ead7c6;
     font-family: 'EB Garamond', serif;
-    /* display: flex; */
     text-align: center;
     align-items: center;
 }
 
 h1 {
     font-family: 'Special Elite', cursive;
+    text-align: center;
 }
 
 h4 {
@@ -18,23 +18,26 @@ h4 {
 ul {
     list-style-type: none;
 }
-/* form{
-    text-align: center;
-    background-color: #012b3b;
-} */
+
 li {
     float: left;
     display: inline;
     text-align: center;
-    padding: 30px;
+    padding: 15px;
 }
+
 button {
     background-color: #012b3b;
 }
+
 .about {
     color: white;
     background-color: #596f7c;
     padding: 10px;
+}
+
+.aboutUser {
+    display: inline-flex;
 }
 
 .bookcover {
@@ -60,10 +63,12 @@ button {
     padding: 50px;
     display: inline-flex;
 }
+
 .footer {
     text-align: center;
     background-color: #012b3b;
 }
+
 .genre {
     justify-content: space-around;
 }
@@ -97,15 +102,22 @@ button {
 }
 
 .navbar {
+    width: 100%;
     list-style-type: none;
     color: #ead7c6;
     font-size: 30px;
+    text-align: center;
 }
 
 .navdiv {
     display: flex;
     padding: 10px;
-    align-items: center;
+    /* text-align: center; */
+}
+
+.reviews {
+    display: inline-flex;
+    justify-content: center;
 }
 
 .square {
@@ -125,7 +137,7 @@ a:link {
 
 /* visited link */
 a:visited {
-    color:#ead7c6;
+    color: #ead7c6;
     text-decoration: none;
     font-size: x-large;
 }
