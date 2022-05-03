@@ -30,13 +30,15 @@ router.get('/new', (req, res) => {
 router.post('/search', async (req, res, next) => {
     try{
         const title= req.body.search
-        return res.redirect('/products/?title='+ title)
+        const input =title.charAt(0).toUpperCase() + title.slice(1)
+        return res.redirect('/products/?title='+ input)
     }catch (error) {
         console.log(error)
         req.error = error
         return next()
     }
 })
+
 // router.get('/api', async (req, res, next) => {
 //     const books = await db.Product.find({})
 //     res.send(books)
