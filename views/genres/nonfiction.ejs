@@ -9,11 +9,11 @@
     <div class='header'>
         <%- include('../partials/nav.ejs') %>
     </div>
-    <h1>"Fantasy Books"</h1>
+    <h1>"Non-Fiction"</h1>
     <div>
         <% for(let i=0; i < books.length; i++) {%>
             <% const book=books[i] %>
-                <% if(book.genre=="Fantasy" ){ %>
+                <% if(book.genre=="Non-Fiction" || book.genre=="Nonfiction" ){ %>
                     <div class="item">
                         <div>
                             <h4 class="title">

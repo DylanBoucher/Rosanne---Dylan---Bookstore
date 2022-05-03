@@ -41,7 +41,49 @@ app.get('/genre/scifi', async (req, res, next) => {
         const users= await db.User.find({})
         const reviews= await db.Review.find({})
         const context = { books, users,reviews }
-        return res.render('scifi.ejs', context)
+        return res.render('genres/scifi.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+//genre:/fantasy
+app.get('/genre/fantasy', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/fantasy.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+//genre:/graphic-novels
+app.get('/genre/graphicNovel', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/graphicNovel.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+//genre:/non-fiction
+app.get('/genre/nonfiction', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/nonfiction.ejs', context)
     }catch (error) {
         console.log(error)
         req.error = error
