@@ -49,9 +49,11 @@ router.get('/:id', async (req, res, next) => {
     try{
         const foundBook = await db.Product.findById(req.params.id)
         const review = await db.Review.find({book: req.params.id})
+        const foundUser = await db.User.findById(foundBook.seller)
         const context = {
             oneBook: foundBook,
             review: review,
+            user: foundUser,
         }
         return res.render('show.ejs', context)
     }catch (error) {

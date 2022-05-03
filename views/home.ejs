@@ -19,21 +19,30 @@
             </h3>
             <h3>Leave reviews to help people know what books to buy, and which sellers are your favorites.</h3>
         </div>
-        <div>
-            <% for(let i=0; i < books.length; i++) {%>
-                <% const book=books[i] %>
-                    <div class="item">
-                        <div>
-                            <h4 class="title">
-                                <%= book.title %>
-                            </h4>
-                        </div>
-                        <a href="products/<%= book._id %>"><img class="bookcover" src="<%= book.image%>"
-                                alt="<%= book.title %>"></a>
-                    </div>
-                    <div class="spacer"></div>
-                    <%}%>
+        <div class=genre>
+            <a href=genre/scifi> <img class=square
+                    src="https://rlv.zcache.com/vintage_science_fiction_alien_steam_punk_helmets_square_sticker-r431e8d6a14b24b7eb6f3406d29f8f12a_0ugmc_8byvr_704.webp"
+                    alt="Science Fiction"></a>
+            <a href=genre/fantasy> <img class=square
+                    src="https://www.apealz.com/myuploads/products-thumb/6-square-conversation-of-the-wizard-and-the-ent.jpg?ver=319642170"
+                    alt="Fantasy"></a>
+            <a href=genre/graphicNovel> <img class=square
+                    src="https://rlv.zcache.com/ww84_save_the_day_wonder_woman_retro_comic_art_square_paper_coaster-r38d3b92b6ab9411e951dfeec555ad582_z6zru_307.jpg?rlvnet=1"
+                    alt="Graphic Novels"></a>
+            <a href=genre/nonfiction> <img class=square
+                    src="https://render.fineartamerica.com/images/rendered/square-product/small/images/artworkimages/mediumlarge/3/martin-luther-king-jr-drawing-murphy-art-elliott.jpg"
+                    alt="Non-Fiction"></a>
+            <div class = genreTitles>
+                <h2 class = genreT>Science Fiction</h2>
+                <h2 class = genreT>Fantasy</h2>
+                <h2 class = genreT>Graphic Novels</h2>
+                <h2 class = genreT>Non-Fiction</h2>
+            </div>
         </div>
+        <div>
+    </div>
+    <div class='footer'>
+        <%- include('./partials/footer.ejs') %>
     </div>
 </body>
 

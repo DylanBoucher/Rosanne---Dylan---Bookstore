@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', { pageName: "User Profile" }) %>
+</head>
+
+<body>
+    <div class='header'>
+        <%- include('../partials/nav.ejs') %>
+    </div>
+    <h1>"Graphic Novels"</h1>
+    <div>
+        <% for(let i=0; i < books.length; i++) {%>
+            <% const book=books[i] %>
+                <% if(book.genre=="Graphic Novel" ){ %>
+                    <div class="item">
+                        <div>
+                            <h4 class="title">
+                                <%= book.title %>
+                            </h4>
+                        </div>
+                        <a href="products/<%= book._id %>"><img class="bookcover" src="<%= book.image%>"
+                                alt="<%= book.title %>"></a>
+                    </div>
+                    <div class="spacer"></div>
+                    <%}%>
+            <%}%>
+    </div>
+    <div class='footer'>
+        <%- include('../partials/footer.ejs') %>
+    </div>
+</body>
+
+</html>

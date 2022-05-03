@@ -30,8 +30,66 @@ app.use('/products', controllers.products)
 app.use('/user', controllers.users)
 app.use('/reviews', controllers.reviews)
 
+//About Route
+app.get('/about', (req, res) => res.render('about.ejs'))
+
+//genre:/scifi
+app.get('/genre/scifi', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/scifi.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+//genre:/fantasy
+app.get('/genre/fantasy', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/fantasy.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+//genre:/graphic-novels
+app.get('/genre/graphicNovel', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/graphicNovel.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+//genre:/non-fiction
+app.get('/genre/nonfiction', async (req, res, next) => {
+    try {
+        const books = await db.Product.find({})
+        const users= await db.User.find({})
+        const reviews= await db.Review.find({})
+        const context = { books, users,reviews }
+        return res.render('genres/nonfiction.ejs', context)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
 //Home route
-//app.get('/', (req, res) => res.render('home.ejs'))
 app.get('/', async (req, res, next) => {
     try {
         const books = await db.Product.find({})
@@ -45,7 +103,6 @@ app.get('/', async (req, res, next) => {
         return next()
     }
 })
-
 module.exports = router
 
 //Listen
