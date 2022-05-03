@@ -9,78 +9,139 @@ body {
 h1 {
     font-family: 'Special Elite', cursive;
 }
+
 h4 {
     font-family: 'Special Elite', cursive;
     font-size: large;
 }
+
 ul {
     list-style-type: none;
 }
-
+/* form{
+    text-align: center;
+    background-color: #012b3b;
+} */
 li {
     float: left;
     display: inline;
     text-align: center;
-    padding: 10px;
+    padding: 30px;
 }
-.about{
+button {
+    background-color: #012b3b;
+}
+.about {
     color: white;
     background-color: #596f7c;
     padding: 10px;
 }
-.bookcover{
+
+.bookcover {
     height: 300px;
 }
-.bookTandP{
+
+.bookTandP {
     display: inline-flex;
 }
-.bookUnder{
+
+.bookUnder {
     font-family: 'Special Elite', cursive;
     font-size: 20px;
     padding: 10px;
 }
+
 .content {
     text-align: left;
 }
+
+.creators {
+    height: 200px;
+    padding: 50px;
+    display: inline-flex;
+}
+.footer {
+    text-align: center;
+    background-color: #012b3b;
+}
+.genre {
+    justify-content: space-around;
+}
+
+.genreT {
+    width: 22%;
+    padding: 10px;
+}
+
+.genreTitles {
+    color: #ead7c6;
+    background: #596f7c;
+    display: inline-flex;
+    width: 100%;
+    text-align: center;
+}
+
 .header {
     align-items: center;
     flex-direction: row;
     background-color: #012b3b;
 }
+
 .homeImg {
     width: 100%;
 }
+
+.names {
+    padding: 50px;
+    display: inline-flex;
+}
+
 .navbar {
     list-style-type: none;
     color: #ead7c6;
-    font-size: 20px;
+    font-size: 30px;
 }
+
 .navdiv {
     display: flex;
-    padding: 5px;
+    padding: 10px;
     align-items: center;
 }
-.spacer{
+
+.square {
+    width: 20%;
+    padding: 2%;
+}
+
+.spacer {
     padding: 20px;
 }
+
 a:link {
-    color: #a5a29d;
+    color: #ead7c6;
     text-decoration: none;
+    font-size: x-large;
 }
+
 /* visited link */
 a:visited {
-    color: #a5a29d;
+    color:#ead7c6;
     text-decoration: none;
+    font-size: x-large;
 }
+
 /* mouse over link */
 a:hover {
     text-decoration: none;
-    color: #012b3b;
-    background-color: #a5a29d;
-    ;
+    color: #ead7c6;
+    background-color: #596f7c;
+    font-size: x-large;
 }
+
 /* selected link */
 a:active {
     text-decoration: none;
     color: #596f7c;
+    font-size: x-large;
+    font-weight: bold;
 }
