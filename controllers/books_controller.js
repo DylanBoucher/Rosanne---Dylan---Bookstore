@@ -1,5 +1,4 @@
 const express = require('express')
-const { append } = require('express/lib/response')
 
 const router = express.Router()
 
@@ -8,7 +7,11 @@ const db = require('../models')
 //Index route
 router.get('/', async (req, res, next) => {
     try {
-        const books = await db.Product.find({})
+        const title = req.query.title
+        let books = await db.Product.find({})
+        if(title) {
+            books = await db.Product.find({title: title})  
+        }
         const context = { books }
         return res.render('index.ejs', context)
     }catch (error) {
@@ -22,6 +25,22 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
+
+//Search route
+router.post('/search', async (req, res, next) => {
+    try{
+        const title= req.body.search
+        return res.redirect('/products/?title='+ title)
+    }catch (error) {
+        console.log(error)
+        req.error = error
+        return next()
+    }
+})
+// router.get('/api', async (req, res, next) => {
+//     const books = await db.Product.find({})
+//     res.send(books)
+// })
 
 //Show route
 router.get('/:id', async (req, res, next) => {
